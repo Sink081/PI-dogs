@@ -24,10 +24,10 @@ module.exports = (sequelize) => {
     },
     lifespan: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     image: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     createdInDb: {

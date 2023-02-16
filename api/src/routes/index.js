@@ -73,12 +73,14 @@ router.get('/dogs/:id', async (req, res) => {
     const allDogs = await getAllDogs()
     try {
             const dogsSelected = allDogs.filter((el) => el.id == id)
+            console.log(id)
             if (dogsSelected.length){
                 res.status(200).json(dogsSelected)
-            } 
+            } else 
+            res.status(200).send(`The breed with the id ${id} doesn't exist`)
     } catch (error) {
-        if (!dogsSelected)
-        res.status(404).json({error: `The breed with the id ${id} doesn't exist`})
+       
+        res.status(404).json({error: error.message})
     }
 });
 
@@ -105,16 +107,17 @@ router.get("/temperament", async (req, res) => {
 
     router.post("/create", async (req, res) => {
         let { name, life_span, weight, height, image, temperament } = req.body;
+        
         try {
           const newBreed = await Dog.findOrCreate({
             
-            where: {
+             
               name: name,
               weight : weight,
               height : height,
               life_span : life_span,
               image: image,
-            },
+            
           });
           await newBreed.setTemperaments(temperament); 
           
