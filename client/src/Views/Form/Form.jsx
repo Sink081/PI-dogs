@@ -14,6 +14,12 @@ const Form = () => {
 
         setForm({...form,[property]:value})
     }
+    const [errors, setErrors] = useState({
+        name: "",
+        height: "",
+        weight: "",
+        lifespan: "",
+    }) 
 
 
     return (

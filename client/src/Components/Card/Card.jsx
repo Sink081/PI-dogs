@@ -1,13 +1,20 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import style from "./Card.module.css"
 
-export default function Card({name, image, temperament, weight}){
+export default function Card(props){
     return (
         <div className={style.card}>
-        <h3>{name}</h3>
-        <h5>{temperament}</h5>
-        <h7>{weight}</h7>
-        <img source= {image} alt= "img not found" width={"200px"} height={"250px"} />
+        <div>       
+              <img src={props.image} alt="There is no img" />
+          </div>
+          <Link to={`/dogs/${props.id}`}>
+            <h2 className="breedName"> {props.name} </h2>
+         
+          <p className="cardTemp"> Temperaments: {props.temperament} </p>
+
+          <p className="cardW"> Weight: {props.weight}  Kg </p>
+ </Link>
         </div>
     )
 }
