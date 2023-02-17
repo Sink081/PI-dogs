@@ -14,7 +14,7 @@ export function getDogs(){
     return async function (dispatch){
         var dogs = await axios.get("http://localhost:3001/dogs");
         dispatch ({
-            type : "GET_DOGS",
+            type : GET_DOGS,
             payload : dogs.data,
         })
     }
@@ -22,19 +22,19 @@ export function getDogs(){
 
 export function getTemps() {
     return async function (dispatch){
-        var temps = await axios.get ("http://localhost:3001/temperament");
+        var temps = await axios.get("http://localhost:3001/temperament", {});
         dispatch({
-            type: "GET_TEMPERAMENTS",
+            type: GET_TEMPS,
             payload: temps.data,
         })
     }
 }
 
-export function getByQueryName() {
+export function getByQueryName(name) {
     return async function (dispatch){
-        var particularDog = await axios.get ("http://localhost:3001/dogs?name=");
+        var particularDog = await axios.get (`http://localhost:3001/dogs?name=${name}`);
         dispatch({
-            type: "GET_BY_QUERY",
+            type: GET_BY_QUERY,
             payload: particularDog.data,
         })
     }

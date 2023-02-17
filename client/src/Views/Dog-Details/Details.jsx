@@ -27,7 +27,7 @@ import { getDogDetailsById} from "../../Redux/Actions";
                 <p>Weight : {dogDetails.weight} Kg.</p>
             </div>
             <p>Height: {dogDetails.height} cm</p>
-            <p>Lifespan: {dogDetails.lifespan} </p>
+            <p>Lifespan: {dogDetails.life_span} </p>
             <Link to= {"/home"}>
                 <button>Back </button>
             </Link>

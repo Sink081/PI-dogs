@@ -3,14 +3,16 @@ import style from "./CardContainer.module.css"
 import {useSelector} from "react-redux"
 
 
-const CardContainer = () => {
+const CardContainer =  () => {
 const dogs = useSelector(state => state.dogs)
+
  
 
     return (
         <div className={style.container}>
         
-    {dogs.map(dogs =>{
+    {dogs?.map((dogs) =>{
+        console.log(dogs)
         return (
             <Card
             key={dogs.id}
