@@ -22,7 +22,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    lifespan: {
+    life_span: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -35,5 +35,7 @@ module.exports = (sequelize) => {
       allowNull: false,
       defaultValue: true
     },
+  },{
+    timestamps: false,
   });
 };
