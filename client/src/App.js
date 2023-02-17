@@ -1,16 +1,16 @@
-import './App.css';
-import { BrowserRouter, Route, useLocation } from 'react-router-dom';
+import style from'./App.css';
+import { BrowserRouter, Route } from 'react-router-dom';
 import { Landing, Home, Form, Details} from "./Views/index"
-import NavBar from './Components/NavBar/NavBar';
+
 
 
 function App() {
-  const location = useLocation();
+  
   return (
     <BrowserRouter>
-    <div className='app'>
+    <div className={style.app}>
       
-        {location.pathname !== "/" && <NavBar/>}
+        
         <Route exact path={"/"} component= {Landing}></Route>
         <Route path={"/dogs/:id"} component= {Details}></Route>
         <Route path={"/home"} component= {Home}></Route>

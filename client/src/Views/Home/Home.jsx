@@ -11,7 +11,7 @@ import {
 } from "../../Redux/Actions/index";
 import Pagination from "../../Components/Paginado/Paginado";
 import SearchBar from "../../Components/SearchBar/SearchBar";
-import "./Home.module.css";
+import style from "./Home.module.css";
 import Card from "../../Components/Card/Card";
 
 // renderiza el componente Home
@@ -91,14 +91,14 @@ export default function Home() {
   }
 
   return (
-    <div className="homeDiv">
-      <div className="title">
+    <div className={style.homeDiv}>
+      <div className={style.title}>
         <h1> Dogs Library</h1>
       </div>
      
         
       
-        <div className="CardContainer">
+        <div className={style.CardContainer}>
           {currentDogs?.map((dog) => { //lógica de ternarios
             console.log(dog)
             return (
@@ -117,17 +117,17 @@ export default function Home() {
           
         </div>
       
-      <div className="buttonCont">
+      <div className={style.buttonCont}>
       <div>
-        <Link to="/home/form">
-          <button className="createButton" type="button">
+        <Link to="/create">
+          <button className={style.createButton} type="button">
             Create Dog
           </button>
         </Link>
       </div>
       <div>
       <button
-          className="refBtn"
+          className={style.refBtn}
           onClick={(e) => {
             handleClick(e);
           }}
@@ -137,14 +137,14 @@ export default function Home() {
       </div>
 
       </div>
-      <div className="buttonCont">
+      <div className={style.buttonCont}>
       
-      <div className="searchBar">
+      <div className={style.searchBar}>
         <SearchBar />
       </div>
      
       <div>
-        <select className="sortBy" onChange={(e) => handleSort(e)}>
+        <select className={style.sortBy} onChange={(e) => handleSort(e)}>
           <option value="default"> Sort by... </option>
           <option value="az"> A-Z</option>
           <option value="za"> Z-A </option>
@@ -155,7 +155,7 @@ export default function Home() {
 
       <div>
         <select
-          className="filterTemps"
+          className={style.filterTemps}
           value={temperament}
           onChange={(e) => handleFilterByTemp(e)}
         >
@@ -170,7 +170,7 @@ export default function Home() {
 
       <div>
         <select
-          className="filterDogs"
+          className={style.filterDogs}
           onChange={(e) => {
             handleFilterByDogs(e);
           }}
@@ -182,7 +182,7 @@ export default function Home() {
       </div>
       </div>
       
-      <div className="Pagination">
+      <div className={style.Pagination}>
         <Pagination
           dogsPerPage={dogsPerPage}
           allDogs={allDogs.length}

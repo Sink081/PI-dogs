@@ -1,0 +1,45 @@
+.landing{
+    background-image: url(../../Imagenes/Landing2.jpg);
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.btnLan{
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    border: 2px solid #3e4c65;
+    font-size: 30px;
+    background-color: #41506b;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transform: scale(100%);
+    margin-left: 45%;
+}
+
+.btnLan:hover{
+    background-color: #90f6d7;
+    color: #41506b;
+    border: 2px solid #74f5ce;
+    transform: scale(110%);
+}
+
+.landing h1{
+    font-size: 80px;
+    font-weight: 600;
+    background-image: conic-gradient(hsla(0, 100%, 49%, 0.783), hwb(266 0% 0%),hsl(189, 99%, 50%));
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-family: Copperplate, Papyrus, fantasy;
+    margin-left: 20%;
+   
+}

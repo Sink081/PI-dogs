@@ -1,0 +1,122 @@
+.CardContainer{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 50px;
+}
+
+.homeDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 50px 0;
+    background-size: cover;
+    background-image: url(../../Imagenes/Landing2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+
+.title{
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 25px;
+    font-weight: 600;
+    background-image: repeating-radial-gradient(closest-side at 20px 20px,hsl(175, 100%, 50%), hsl(68, 90%, 50%), hwb(0 4% 7%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    filter: brightness(150%);
+    align-self: center;
+      
+}
+
+.sortBy{
+    font-family: Copperplate, Papyrus, fantasy;
+    background-color: azure;
+    border: 1px solid;
+    font-size: 30px;
+    display: flex;
+   
+}
+
+.sortBy:hover{
+    background-color: azure;
+}
+
+.filterTemps{
+    font-family: Copperplate, Papyrus, fantasy;
+    background-color: azure;
+    border: 1px solid;
+    font-size: 30px;
+    display: flex;
+ 
+}
+
+.filterTemps:hover{
+    background-color: azure;
+}
+
+.filterBreeds{
+    font-family: Copperplate, Papyrus, fantasy;
+    background-color: azure;
+    border: 1px solid;
+    font-size: 30px;
+    display: flex;
+  
+}
+
+.filterBreeds:hover{
+    background-color: azure;
+}
+
+.createButton{
+    font-family: Copperplate, Papyrus, fantasy;
+    background-color: #35bcbf;
+    border: 1px solid #0eb2b4;
+    color:whitesmoke;
+    border-radius: 5px;
+    font-size: 30px;
+    display: flex;
+    cursor: pointer;
+    transform: scale(100%);
+  
+}
+
+.createButton:hover{
+    background-color: #baf2f5;
+    color:#263849;
+    border: 1px solid #d0f5f7;
+    font-size: 30px;
+    transform: scale(110%);
+}
+
+.refBtn{
+    font-family: Copperplate, Papyrus, fantasy;
+    background-color: #35bcbf;
+    cursor: pointer;
+    border: 1px solid #0eb2b4;
+    border-radius: 6px;
+    color: whitesmoke;
+    font-size: 30px;
+    display: flex;
+    transform: scale(100%);
+    
+   
+    }
+    /* probar transform scale en los otros botones sin agrandar border  */
+.refBtn:hover{
+    background-color: #baf2f5;
+    color:#263849;
+    border: 1px solid #d0f5f7;
+    font-size: 30px;
+    transform: scale(110%);
+}
+
+
+.buttonCont{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 100%;
+    gap: 25px;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Paginado.module.css";
+import style from "./Paginado.module.css";
 
 export default function Pagination({
   dogsPerPage,
@@ -17,8 +17,8 @@ export default function Pagination({
   }
 
   return (
-    <div className=".buttonCont">
-    <nav className="btnPag">
+    <div className={style.buttonCont}>
+    <nav className={style.btnPag}>
       <button
         onClick={() =>
           pagination(currentPage === 1 ? pageNumbers.length : currentPage - 1)

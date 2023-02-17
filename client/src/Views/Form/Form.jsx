@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getDogs, getTemps } from "../../Redux/Actions";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
-import "./Form.module.css";
+import style from "./Form.module.css";
 
 const Form = () => {
   const tempForm = useSelector((state) => state.temperaments); //para poder usar el estado.
@@ -137,13 +137,14 @@ const Form = () => {
   }
 
   return (
-    <div className="backgroundForm">
+    <div className={style.backgroundForm}>
       <div>
-        <div className="formCss">
-          <div className="formTitle">
+        <div className={style.formCss}>
+          <div className={style.formTitle}>
             <h1>Breed Creation Panel</h1>
           </div>
           <form onSubmit={(e) => handleSubmit(e)}>
+            <div className={style.inputsStyle}>
             <label> Name: </label>
             <input
               type="text"
@@ -152,12 +153,12 @@ const Form = () => {
               onChange={(e) => handleChange(e)}
             />
             {errors.name && <p>{errors.name}</p>}
-
-            <div className="lifeSpan">
-              <p>
+            </div>
+            <div className={style.lifeSpan}>
+              <div className={style.inputsStyle}>
                 <label> Life span (years): </label>
                 <input
-                  className="inputLife"
+                  className={style.inputLife}
                   type="number"
                   min="1"
                   max="25"
@@ -168,7 +169,7 @@ const Form = () => {
                 />
 
                 <input
-                  className="inputLife"
+                  className={style.inputLife}
                   type="number"
                   min="1"
                   max="25"
@@ -177,13 +178,13 @@ const Form = () => {
                   value={completed.life_spanmax}
                   onChange={(e) => handleChange(e)}
                 />
-              </p>
+              </div>
               <p>
                 {errors.life_span ? <label>{errors.life_span}</label> : null}
               </p>
             </div>
 
-            <p>
+            <div className={style.inputsStyle}>
               <label> Weight (Kg): </label>
               <input
                 type="number"
@@ -202,10 +203,10 @@ const Form = () => {
                 value={completed.weightmax}
                 onChange={(e) => handleChange(e)}
               />
-            </p>
+            </div>
             <p>{errors.weight ? <label>{errors.weight}</label> : null}</p>
 
-            <p>
+            <div className={style.inputsStyle}>
               <label> Height (cm): </label>
               <input
                 type="number"
@@ -225,22 +226,22 @@ const Form = () => {
                 value={completed.heightmax}
                 onChange={(e) => handleChange(e)}
               />
-            </p>
+            </div>
             <p>{errors.height ? <label>{errors.height}</label> : null}</p>
 
             <label> Image: </label>
             <input
-              className="inputImg"
+              className={style.inputImg}
               type="url"
               name="image"
               value={completed.image}
               onChange={(e) => handleChange(e)}
             />
 
-            <div>
+            <div className={style.inputsStyle}>
               <label> Temperaments: </label>
               <select
-                className="inputTemp"
+                className={style.inputTemp}
                 value= {completed.temperaments}
                 onChange={(e) => handleTemperaments(e)}
               >
@@ -258,7 +259,7 @@ const Form = () => {
               </p>
             </div>
 
-            <div className="temp">
+            <div className={style.temp}>
               {completed.temperaments?.map((item) => (
                 <div key={item.id}>
                    {item.name}{" "}
@@ -267,11 +268,11 @@ const Form = () => {
               ))}
             </div>
             <Link to="/home">
-              <button className="BackButton">
+              <button className={style.BackButton}>
                 <p> Back </p>
               </button>
             </Link>
-            <button className="submitButton" type="submit">
+            <button className={style.submitButton} type="submit">
               <p> Submit </p>
             </button>
           </form>
