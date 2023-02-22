@@ -95,48 +95,6 @@ export default function Home() {
       <div className={style.title}>
         <h1> Dogs Library</h1>
       </div>
-     
-        
-      
-        <div className={style.CardContainer}>
-          {currentDogs?.map((dog) => { //lógica de ternarios
-            console.log(dog)
-            return (
-              <div>
-                <Card
-                  id={dog.id}
-                  name={dog.name}
-                  image={dog.image}
-                  temperament={dog.temperament.join(", ")}
-                  weight={dog.weight}
-                  height={dog.height}
-                />
-              </div>
-            );
-          })}
-          
-        </div>
-      
-      <div className={style.buttonCont}>
-      <div>
-        <Link to="/create">
-          <button className={style.createButton} type="button">
-            Create Dog
-          </button>
-        </Link>
-      </div>
-      <div>
-      <button
-          className={style.refBtn}
-          onClick={(e) => {
-            handleClick(e);
-          }}
-        >
-          Refresh
-        </button>
-      </div>
-
-      </div>
       <div className={style.buttonCont}>
       
       <div className={style.searchBar}>
@@ -181,6 +139,48 @@ export default function Home() {
         </select>
       </div>
       </div>
+        
+      
+        <div className={style.CardContainer}>
+          {currentDogs?.map((dog) => { //lógica de ternarios
+            console.log(dog)
+            return (
+              <div>
+                <Card
+                  id={dog.id}
+                  name={dog.name}
+                  image={dog.image}
+                  temperament={dog.temperament}
+                  weight={dog.weight}
+                  height={dog.height}
+                />
+              </div>
+            );
+          })}
+          
+        </div>
+      
+      <div className={style.buttonCont}>
+      <div>
+        <Link to="/create">
+          <button className={style.createButton} type="button">
+            Create Dog
+          </button>
+        </Link>
+      </div>
+      <div>
+      <button
+          className={style.refBtn}
+          onClick={(e) => {
+            handleClick(e);
+          }}
+        >
+          Refresh
+        </button>
+      </div>
+
+      </div>
+      
       
       <div className={style.Pagination}>
         <Pagination
@@ -190,9 +190,7 @@ export default function Home() {
           currentPage={currentPage}
         />
       </div>
-      <div>
-      <h4>By Juan Bertolotti (y asociados)</h4>
-      </div>
+      
       </div>
   );
 }

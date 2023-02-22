@@ -91,3 +91,7 @@ form {
     flex-direction: column;
     gap: 0.5em;
 }
+.errors {
+    color: red;
+    font-weight: bold;
+}

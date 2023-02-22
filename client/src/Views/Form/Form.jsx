@@ -152,7 +152,7 @@ const Form = () => {
               value={completed.name}
               onChange={(e) => handleChange(e)}
             />
-            {errors.name && <p>{errors.name}</p>}
+            {errors.name && <p className={style.errors}>{errors.name}</p>}
             </div>
             <div className={style.lifeSpan}>
               <div className={style.inputsStyle}>
@@ -179,7 +179,7 @@ const Form = () => {
                   onChange={(e) => handleChange(e)}
                 />
               </div>
-              <p>
+              <p className={style.errors}>
                 {errors.life_span ? <label>{errors.life_span}</label> : null}
               </p>
             </div>
@@ -204,7 +204,7 @@ const Form = () => {
                 onChange={(e) => handleChange(e)}
               />
             </div>
-            <p>{errors.weight ? <label>{errors.weight}</label> : null}</p>
+            <p className={style.errors}>{errors.weight ? <label>{errors.weight}</label> : null}</p>
 
             <div className={style.inputsStyle}>
               <label> Height (cm): </label>
@@ -227,7 +227,7 @@ const Form = () => {
                 onChange={(e) => handleChange(e)}
               />
             </div>
-            <p>{errors.height ? <label>{errors.height}</label> : null}</p>
+            <p className={style.errors}>{errors.height ? <label>{errors.height}</label> : null}</p>
 
             <label> Image: </label>
             <input
@@ -252,7 +252,7 @@ const Form = () => {
                   </option>
                 ))}
               </select>
-              <p>
+              <p className={style.errors}>
                 {errors.temperaments ? (
                   <label>{errors.temperaments}</label>
                 ) : null}

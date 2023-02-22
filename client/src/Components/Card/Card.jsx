@@ -13,7 +13,7 @@ export default function Card({id, name, temperament, image, weight}){
           <Link to={`/dogs/${id}`}>
             <h2 className={style.breedName}> {name} </h2>
          
-          <p className={style.cardTemp}> Temperaments: {temperament} </p>
+          <p className={style.cardTemp}> Temperaments: {temperament + ","} </p>
 
           <p className={style.cardW}> Weight: {weight}  Kg </p>
             </Link>

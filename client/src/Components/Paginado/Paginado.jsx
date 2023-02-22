@@ -15,6 +15,9 @@ export default function Pagination({
   if (currentPage === pageNumbers.length + 1) {
     pagination(1);
   }
+  if (pageNumbers.length === 1){
+    return null
+  }
 
   return (
     <div className={style.buttonCont}>
